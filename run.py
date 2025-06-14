@@ -1,7 +1,5 @@
-#!/usr/bin/env python
-from simple_app import app
+import os
 
-if __name__ == '__main__':
-    port = 5000
-    print(f"Starting server at http://localhost:{port}")
-    app.run(host='localhost', port=port, debug=True) 
+port = int(os.environ.get("PORT", 5000))
+
+app.run(host="0.0.0.0", port=port, debug=True)
